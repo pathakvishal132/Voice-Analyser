@@ -1,0 +1,21 @@
+.footer {
+  background-color: black; /* Assuming you want a black background */
+  padding: 20px 0; /* Adjust padding as needed */
+}
+
+.footer h3 {
+  margin-bottom: 15px; /* Add some space below the heading */
+}
+
+.footer a {
+  color: inherit; /* Inherit text color from footer (white) */
+}
+
+.footer a:hover {
+  color: #ccc; /* Change color on hover (light gray) */
+  text-decoration: none; /* Remove underline on hover */
+}
+
+.footer .bi { /* Target all Bootstrap Icons (bi) */
+  margin-right: 10px; /* Add some space between icons */
+}

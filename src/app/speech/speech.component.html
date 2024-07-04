@@ -1,0 +1,56 @@
+<div>
+<div>
+  <h2>Create Speech</h2>
+  <form (submit)="createSpeech()">
+    <label for="speechText">Speech Text:</label>
+    <textarea id="speechText" [(ngModel)]="speech_text" name="speechText" required></textarea>
+    <br />
+    <button type="button" (click)="toggleSpeechRecognition()">Start Speaking</button>
+    <button type="button" (click)="stopRecording()">Stop Speaking</button>
+    <p>{{speechService.text}}</p>
+    <label for="language">Language:</label>
+    <input id="language" [(ngModel)]="language" name="language" required />
+    <br />
+    
+    <button type="submit">Create Speech</button>
+  </form>
+</div>
+
+
+<hr />
+
+<div>
+  <h2>Speeches List</h2>
+  <button (click)="getSpeeches()">Refresh Speeches</button>
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Speech Text</th>
+        <th>Language</th>
+        <th>Unique Phrases</th>
+        <th>Most Frequent Word</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let speech of speeches">
+        <td>{{ speech.id }}</td>
+        <td>{{ speech.speech_text }}</td>
+        <td>{{ speech.language }}</td>
+        <td>
+          <button (click)="getUniquePhrases(speech.id)">View</button>
+        </td>
+        <td>
+          <button (click)="getMostFrequentWord(speech.id)">View</button>
+        </td>
+        <td>
+          <button (click)="deleteSpeech(speech.id)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  
+</div>
+</div>
